@@ -44,8 +44,7 @@ let consultaPosicion;
 let compruebaCliente1 = false;
 let compruebaCliente3 = false;
 let compruebaCliente4 = false;
-let enter;
-let userInput;
+let secret;
 
 
 do{
@@ -136,9 +135,12 @@ console.log(' 8. Salir del programa. ');
         let lines = fs.readFileSync(file, 'utf8');
 
     }
-    do{
-        enter = readlineSync.question('Pulsa <INTRO> para continuar. ');
-    }while (enter != \n);
+    //Método para que al pusar la tecla <INTRO> pase al siguiente paso.
+    readlineSync.setDefaultOptions({limit: ['\n']});
+    pressedKey = readlineSync.question('Pulsa <INTRO> para continuar. ');
+     
+    
+       
 console.clear();
 }while (introduceNum !=8);
 console.log('                           ');
