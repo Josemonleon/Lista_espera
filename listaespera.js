@@ -138,7 +138,7 @@ console.log(' 8. Salir del programa. ');
     }
     do{
         enter = readlineSync.question('Pulsa <INTRO> para continuar. ');
-    }while (enter != 'intro');
+    }while (enter != \n);
 console.clear();
 }while (introduceNum !=8);
 console.log('                           ');
