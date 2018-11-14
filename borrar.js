@@ -135,6 +135,7 @@ do{
     }
 
 
+console.clear();
 }while (introduceNum !=8);
 console.log('                           ');
 console.log('El programa ha finalizado. ');
