@@ -1,7 +1,14 @@
 const fs = require('fs');
 let readlineSync = require('readline-sync');
 
-//Función que añade el nombre de un cliente al final de la lista de espera.
+
+
+/**
+ * Función que añade el nombre de un cliente al final de la lista de espera.
+ * @param {Array} lista Lista de espera.
+ * @param {string} nombreCliente Nombre del nuevo cliente.
+ * @returns {Array} Devuelve el array de la lista más el cliente nuevo añadido.
+ */
 function agregaCliente1(lista,nombreCliente){
     
     lista.push(nombreCliente);
@@ -9,14 +16,24 @@ function agregaCliente1(lista,nombreCliente){
     return lista;
 }
 
-//Función que elimina el primer nombre del array.
+
+/**
+ * Función que elimina el primer nombre del array.
+ * @param {Array} lista Lista de espera.
+ * @returns {Array} Devuelve el array con el primer nombre eliminado.
+ */
 function clienteOcupaMesa2(lista){
 
     lista.shift();
     return lista;
 }
 
-//Función que elimina el nombre del array que se haya escrito previamente por teclado.
+/**
+ * Función que elimina el nombre del array que se haya escrito previamente por teclado.
+ * @param {Array} lista Lista de espera.
+ * @param {string} nombreCliente Nombre del cliente que se quiere eliminar.
+ * @returns {Array} Array con el nombre indicado en nombreCliente eliminado.
+ */
 function borraCliente3(lista,nombreCliente){
     console.log('Se ha eliminado a '+nombreCliente+' de la lista. ');
     lista.splice(lista.indexOf(nombreCliente),1);
@@ -24,20 +41,27 @@ function borraCliente3(lista,nombreCliente){
 
 }
 
-//Función que muestra la posición del cliente en el array (el +1 es para compensar la base 0 del array).
+/**
+ * Función que muestra la posición del cliente en el array (el +1 es para compensar la base 0 del array).
+ * @param {Array} lista Lista de espera.
+ * @param {string} nombreCliente 
+ */
 function turnoCliente4(lista,nombreCliente){
 
 console.log(nombreCliente+' está en la posición '+(lista.indexOf(nombreCliente)+1));    
 }
 
-//Función que muestra el estado de la lista de espera en el momento de llamar a la función.
+/**
+ * Función que muestra el estado de la lista de espera en el momento de llamar a la función.
+ * @param {Array} lista Lista de espera.
+ */
 function verLista5(lista){
     console.log(lista);
 }
 
 
 let introduceNum;
-let listaEspera = new Array('PEPE','MARTA','RUBEN','JULIA'); //Array donde se guarda la lista de espera.
+let listaEspera = new Array(); //Array donde se guarda la lista de espera.
 let escribeNombre; //Variable para añadir cada vez el nombre del cliente nuevo.
 let eliminaCliente;
 let consultaPosicion;
@@ -134,6 +158,7 @@ console.log(' 8. Salir del programa. ');
 
     }
     direction = readlineSync.keyIn('Introduce <ESPACIO> para continuar. ', {limit: ' '});
+    
 console.clear();
 }while (introduceNum !=8);
 console.log('                           ');
